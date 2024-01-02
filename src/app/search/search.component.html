@@ -19,7 +19,7 @@
         <p class="text-gray-500">Esperamos que nos traigas<br>una imagen para comenzar la búsqueda.</p>
     </div>
     <ng-template #searchContent>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
             <app-giphy-card *ngFor="let giphy of giphySearch" [title]="giphy.title" [id]="giphy.id"
                 [imageUrl]="giphy.images.original.url"></app-giphy-card>
         </div>

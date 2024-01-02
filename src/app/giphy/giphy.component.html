@@ -1,9 +1,9 @@
-<div class="px-4 sm:px-10 lg:px-24 pb-5">
+<div class="px-4 sm:px-10 lg:px-36 xl:px-40 pb-5">
     <div class="text-center mb-2 py-10">
         <div class="font-bold text-4xl text-gray-400 inline-block">ÚLTIMOS GIFS&nbsp;</div>
         <div class="font-bold text-4xl text-gray-700 inline-block">EXCLUSIVOS</div>
     </div>
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
         <app-giphy-card 
             *ngFor="let giphy of giphyAll" 
             [title]="giphy.title" 
