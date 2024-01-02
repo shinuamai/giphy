@@ -5,7 +5,9 @@ module.exports = {
     './src/**/*.ts'
   ],
   theme: {
-    extend: {},
+    extend: {
+      DM: ['DM Sans', 'sans-serif'],
+    },
   },
   plugins: [],
 }
