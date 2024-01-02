@@ -13,7 +13,7 @@ export class SearchComponent implements OnChanges{
   valueSearch: string =''
   currentPage = 0;
   pageSize = 10;
-  
+  noResults = false
   constructor(private giphyService: GiphyService) { }
   
   onFocus() {
@@ -35,6 +35,7 @@ export class SearchComponent implements OnChanges{
     const offset = this.currentPage * this.pageSize;
     this.giphyService.search(value, offset).subscribe(giphies => {
       this.giphySearch = giphies.data;
+      this.noResults = this.giphySearch.length === 0
     });
   }
 

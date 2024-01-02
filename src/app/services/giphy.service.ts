@@ -12,12 +12,11 @@ export class GiphyService {
   private apiKey = 'ib0VTbUXjj5LlyrFP969nsWRxg3WrIpD';
   private limit = 12;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
   }
 
   getData(offset: number): Observable<any> {
     const url = `${this.baseUrl}?api_key=${this.apiKey}&limit=${this.limit}&offset=${offset}&rating=g&bundle=messaging_non_clips`;
-
     return this.http.get(url)
       .pipe(
         catchError(error => {
@@ -27,10 +26,8 @@ export class GiphyService {
       );
   }
 
-  search(value: any, offset:number): Observable<any> {
-    console.log(value)
+  search(value: any, offset: number): Observable<any> {
     const url = `${this.urlSearch}?api_key=${this.apiKey}&q=${value}&limit=${this.limit}&offset=${offset}&rating=g&lang=es&bundle=messaging_non_clips`;
-    console.log(url)
     return this.http.get(url)
       .pipe(
         catchError(error => {
