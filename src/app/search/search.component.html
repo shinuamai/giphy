@@ -13,17 +13,31 @@
             class="border-none outline-none flex-grow px-4 py-2"
             (focus)="onFocus()"
             (blur)="onBlur()"
-        />
-        <button class="focus:outline-none p-3">
+            [(ngModel)]="valueSearch"
+        >
+        <button class="focus:outline-none p-3"(click)="performSearch()">
             <img src="/assets/images/search.svg" alt="Search">
         </button>
     </div>
 
-    <div *ngIf="!isInputFocused" class="flex flex-col items-center justify-center text-center">
+    <div *ngIf="isInputFocused; else searchContent"class="flex flex-col items-center justify-center text-center">
         <img src="/assets/images/waiting.svg" alt="waiting" class="h-48 mb-4">
         <p class="text-gray-500">Esperamos que nos traigas<br>una imagen para comenzar la búsqueda.</p>
     </div>
-    
+    <ng-template #searchContent>
+        <div class="grid grid-cols-3 gap-4">
+            <app-giphy-card
+                *ngFor="let giphy of giphySearch"
+                [title]="giphy.title"
+                [id]="giphy.id"
+                [imageUrl]="giphy.images.original.url"
+            ></app-giphy-card>
+        </div>
+        <div class="flex justify-between mt-4">
+            <button (click)="prevPage()" [disabled]="currentPage === 0" class="bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer">Anterior</button>
+            <button (click)="nextPage()" class="bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer">Siguiente</button>
+        </div>
+    </ng-template>
     
     
 </div>

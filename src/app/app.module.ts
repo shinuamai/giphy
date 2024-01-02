@@ -12,6 +12,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GiphyCardComponent } from './components/giphy-card/giphy-card.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { GiphyCardComponent } from './components/giphy-card/giphy-card.component
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
