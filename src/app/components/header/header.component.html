@@ -1,5 +1,5 @@
-<nav class="bg-emerald-950">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+<nav class="shadow-lg">
+    <div class="mx-auto max-w-7xl px-4 sm:px-10 lg:px-24">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
@@ -20,9 +20,9 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <a routerLink="/inicio"  class="focus:outline-none focus:bg-emerald-600  hover:bg-emerald-600 hover:text-white  text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-              <a routerLink="/giphy" class="focus:outline-none focus:bg-emerald-600 text-gray-300 hover:bg-emerald-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Giphy</a>
-              <a routerLink="/search" class="focus:outline-none focus:bg-emerald-600 text-gray-300 hover:bg-emerald-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Search</a>
+              <a routerLink="/inicio"  class="focus:outline-none focus:bg-gray-200 text-gray-500 hover:bg-gray-200 rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+              <a routerLink="/giphy" class="focus:outline-none focus:bg-gray-200 text-gray-500 hover:bg-gray-200 rounded-md px-3 py-2 text-sm font-medium">Giphy</a>
+              <a routerLink="/search" class="focus:outline-none focus:bg-gray-200 text-gray-500 hover:bg-gray-200 rounded-md px-3 py-2 text-sm font-medium">Search</a>
             </div>
           </div>
         </div>
@@ -32,9 +32,9 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div *ngIf="isMobileMenuOpen" class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
-          <a routerLink="/inicio" class="focus:outline-none focus:bg-emerald-600  hover:bg-emerald-600 hover:text-white  text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-          <a routerLink="/giphy" class="focus:outline-none focus:bg-emerald-600 text-gray-300 hover:bg-emerald-600 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Giphy</a>
-          <a routerLink="/search" class="focus:outline-none focus:bg-emerald-600 text-gray-300 hover:bg-emerald-600 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Search</a>
+          <a routerLink="/inicio" class="focus:outline-none focus:bg-gray-200 text-gray-500 hover:bg-gray-200 block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
+          <a routerLink="/giphy" class="focus:outline-none focus:bg-gray-200 text-gray-500 hover:bg-gray-200 block rounded-md px-3 py-2 text-base font-medium">Giphy</a>
+          <a routerLink="/search" class="focus:outline-none focus:bg-gray-200 text-gray-500 hover:bg-gray-200 block rounded-md px-3 py-2 text-base font-medium">Search</a>
         </div>
       </div>
   </nav>
