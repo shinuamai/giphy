@@ -11,15 +11,18 @@ export class GiphyComponent {
   giphyAll: Giphy[] = []
   currentPage = 0;
   pageSize = 10;
+
   constructor(private giphyService: GiphyService) { }
+
   ngOnInit() {
     this.getGiphies()
   }
+
   getGiphies() {
     const offset = this.currentPage * this.pageSize;
     this.giphyService.getData(offset).subscribe(giphies => {
       this.giphyAll = giphies.data;
-      
+
     });
   }
 
@@ -34,5 +37,4 @@ export class GiphyComponent {
       this.getGiphies();
     }
   }
-
 }
