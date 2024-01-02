@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  isInputFocused = false;
 
+  onFocus() {
+    this.isInputFocused = true;
+  }
+
+  onBlur() {
+    this.isInputFocused = false;
+  }
 }
