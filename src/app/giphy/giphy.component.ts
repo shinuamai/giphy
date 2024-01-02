@@ -9,16 +9,30 @@ import { Giphy } from '../interfaces/giphy';
 })
 export class GiphyComponent {
   giphyAll: Giphy[] = []
+  currentPage = 0;
+  pageSize = 10;
   constructor(private giphyService: GiphyService) { }
-
   ngOnInit() {
-    this.getPosts()
+    this.getGiphies()
   }
-  getPosts() {
-    this.giphyService.getData().subscribe(giphy => {
-      this.giphyAll = giphy
-      console.log(this.giphyAll)
-    })
+  getGiphies() {
+    const offset = this.currentPage * this.pageSize;
+    this.giphyService.getData(offset).subscribe(giphies => {
+      this.giphyAll = giphies.data;
+      
+    });
+  }
+
+  nextPage() {
+    this.currentPage++;
+    this.getGiphies();
+  }
+
+  prevPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.getGiphies();
+    }
   }
 
 }

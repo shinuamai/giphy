@@ -7,13 +7,17 @@ import { Giphy } from '../interfaces/giphy';
   providedIn: 'root'
 })
 export class GiphyService {
-  urlBase = 'https://api.giphy.com/v2/emoji?api_key=ib0VTbUXjj5LlyrFP969nsWRxg3WrIpD&limit=10&offset=0';
+  private baseUrl = 'https://api.giphy.com/v1/gifs/trending';
+  private apiKey = 'ib0VTbUXjj5LlyrFP969nsWRxg3WrIpD';
+  private limit = 12;
 
   constructor(private http: HttpClient) { 
   }
 
-  getData(): Observable<Giphy[]> {
-    return this.http.get<Giphy[]>(this.urlBase)
+  getData(offset: number): Observable<any> {
+    const url = `${this.baseUrl}?api_key=${this.apiKey}&limit=${this.limit}&offset=${offset}&rating=g&bundle=messaging_non_clips`;
+
+    return this.http.get(url)
       .pipe(
         catchError(error => {
           console.error('Ocurrió un error en la solicitud HTTP GET:', error);

@@ -1,10 +1,10 @@
 export interface Giphy {
     title: string;
     images:{
-        original? :{
-            url?: string
+        original :{
+            url: string
         }
     };
-    rating: string;
+    id: string;
 
   }
